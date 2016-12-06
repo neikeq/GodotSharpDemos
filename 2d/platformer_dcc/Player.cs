@@ -28,29 +28,10 @@ public class Player : RigidBody2D
     PackedScene bullet;
     PackedScene enemy;
 
-    string a1 = "Hello there";
-    string a2 = "hmmm";
-    int a3 = 39;
-    Vector2 a4 = new Vector2(10, 20);
-
-    void test_me_plz(object variant)
-    {
-        if (this.a1 != (String)variant)
-            Console.WriteLine("no! no! no!");
-    }
-
-    void me_too_ok_thx(string a1, string a2, int a3, Vector2 a4)
-    {
-        if (this.a1 != a1 || this.a2 != a2 || this.a3 != a3 || this.a4 != a4)
-            Console.WriteLine("no! no! no!");
-    }
-
     void _ready()
     {
         enemy = ResourceLoader.load("res://enemy.tscn") as PackedScene;
         bullet = ResourceLoader.load("res://bullet.tscn") as PackedScene;
-        call("test_me_plz", a1);
-        call("me_too_ok_thx", a1, a2, a3, a4);
     }
 
     void _integrate_forces(Physics2DDirectBodyState s)
